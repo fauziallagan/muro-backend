@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workshops",
+  "info": {
+    "singularName": "workshop",
+    "pluralName": "workshops",
+    "displayName": "workshop"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "ws_category": {
+      "type": "enumeration",
+      "enum": [
+        "Semester 1",
+        "Semester 2",
+        "Semester 3",
+        "Semester 4",
+        "Semester 5",
+        "Semester 6"
+      ]
+    },
+    "workshop": {
+      "type": "component",
+      "component": "shared.testing",
+      "repeatable": false
+    }
+  }
+}

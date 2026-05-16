@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "events"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Praktikum",
+        "Workshop",
+        "ESC"
+      ]
+    },
+    "status_events": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Closed",
+        "Coming Soon"
+      ]
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "instructor": {
+      "type": "string"
+    },
+    "room": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "datetime"
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "registered": {
+      "type": "biginteger"
+    },
+    "day": {
+      "type": "enumeration",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "lomba_esc": {
+      "type": "enumeration",
+      "enum": [
+        "Drone",
+        "Robot Computer Vision",
+        "Robot Sumo",
+        "Robot Line Follower",
+        "Robot Wall Follower"
+      ]
+    },
+    "Cabang_lomba_esc": {
+      "type": "biginteger"
+    },
+    "Tahun_esc": {
+      "type": "biginteger"
+    }
+  }
+}

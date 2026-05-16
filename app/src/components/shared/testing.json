@@ -1,0 +1,76 @@
+{
+  "collectionName": "components_shared_testings",
+  "info": {
+    "displayName": "template",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "status_events": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Closed",
+        "Coming Soon"
+      ]
+    },
+    "room": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "datetime"
+    },
+    "end_time": {
+      "type": "datetime"
+    },
+    "region": {
+      "type": "enumeration",
+      "enum": [
+        "Depok",
+        "Kalimalang",
+        "Karawachi",
+        "Kenari"
+      ]
+    },
+    "day": {
+      "type": "enumeration",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "instructor": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Semester 1",
+        "Semester 2",
+        "Semester 3",
+        "Semester 4",
+        "Semester 5",
+        "Semester 6"
+      ]
+    }
+  },
+  "config": {}
+}

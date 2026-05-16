@@ -1,0 +1,31 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<rect width="1920" height="1080" fill="#020617"/>
+
+<g opacity="0.6">
+
+<path d="M0 120 H450 V220 H720" stroke="#00D1FF" stroke-width="2"/>
+<circle cx="450" cy="120" r="4" fill="#00D1FF"/>
+<circle cx="720" cy="220" r="4" fill="#00D1FF"/>
+
+<path d="M1920 300 H1450 V500 H1180" stroke="#A855F7" stroke-width="2"/>
+<circle cx="1450" cy="300" r="4" fill="#A855F7"/>
+<circle cx="1180" cy="500" r="4" fill="#A855F7"/>
+
+<path d="M200 900 H600 V760 H920" stroke="#00D1FF" stroke-width="2"/>
+<circle cx="600" cy="900" r="4" fill="#00D1FF"/>
+<circle cx="920" cy="760" r="4" fill="#00D1FF"/>
+
+<path d="M1700 800 H1400 V650 H1100" stroke="#A855F7" stroke-width="2"/>
+<circle cx="1400" cy="800" r="4" fill="#A855F7"/>
+<circle cx="1100" cy="650" r="4" fill="#A855F7"/>
+
+<path d="M0 500 H300 V400 H500 V600 H800" stroke="#00D1FF" stroke-width="1.5"/>
+<path d="M1920 700 H1600 V900 H1300" stroke="#A855F7" stroke-width="1.5"/>
+
+<path d="M900 0 V250 H1100 V400" stroke="#00D1FF" stroke-width="1.5"/>
+<path d="M1200 1080 V850 H1400 V720" stroke="#A855F7" stroke-width="1.5"/>
+
+</g>
+
+</svg>

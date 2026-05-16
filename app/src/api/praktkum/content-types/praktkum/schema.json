@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "praktkums",
+  "info": {
+    "singularName": "praktkum",
+    "pluralName": "praktkums",
+    "displayName": "praktikum"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "praktikum": {
+      "type": "component",
+      "component": "shared.testing",
+      "repeatable": false
+    }
+  }
+}

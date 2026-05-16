@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================================================
+   LOGIN ONLY
+========================================================= */
+
+[data-testid="auth-layout"] * {
+  font-family: 'Inter', sans-serif;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(59,130,246,0.15),
+      transparent 30%),
+
+    radial-gradient(circle at bottom right,
+      rgba(168,85,247,0.12),
+      transparent 30%),
+
+    linear-gradient(
+      135deg,
+      #020617 0%,
+      #050816 40%,
+      #000000 100%
+    ) !important;
+}
+
+/* =========================================================
+   GRID EFFECT
+========================================================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  opacity: 0.7;
+
+  animation:
+    gridMove 18s linear infinite;
+
+  z-index: 0;
+}
+
+@keyframes gridMove {
+
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-70px);
+  }
+}
+
+/* =========================================================
+   GLOW EFFECT
+========================================================= */
+
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(59,130,246,0.15),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(168,85,247,0.12),
+      transparent 20%
+    );
+
+  filter: blur(80px);
+
+  animation:
+    glowMove 10s ease-in-out infinite alternate;
+
+  z-index: 0;
+}
+
+@keyframes glowMove {
+
+  from {
+    transform:
+      translateX(-20px)
+      translateY(-10px);
+  }
+
+  to {
+    transform:
+      translateX(20px)
+      translateY(10px);
+  }
+}
+
+/* =========================================================
+   AUTH WRAPPER
+========================================================= */
+
+[data-testid="auth-layout"] {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+[data-testid="auth-layout"] > div {
+
+  position: relative;
+
+  width: 480px !important;
+
+  background:
+    rgba(10,15,30,0.72) !important;
+
+  backdrop-filter:
+    blur(20px);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  border-radius: 28px !important;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 80px rgba(0,0,0,0.55),
+    0 0 40px rgba(59,130,246,0.08);
+}
+
+/* =========================================================
+   TOP LIGHT
+========================================================= */
+
+[data-testid="auth-layout"] > div::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #3b82f6,
+      #8b5cf6,
+      transparent
+    );
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+[data-testid="auth-layout"] img {
+
+  width: 80px !important;
+
+  filter:
+    drop-shadow(0 0 20px rgba(59,130,246,0.25));
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+[data-testid="auth-layout"] h1,
+[data-testid="auth-layout"] h2,
+[data-testid="auth-layout"] h3,
+[data-testid="auth-layout"] h4,
+[data-testid="auth-layout"] h5,
+[data-testid="auth-layout"] h6,
+[data-testid="auth-layout"] label,
+[data-testid="auth-layout"] p,
+[data-testid="auth-layout"] span,
+[data-testid="auth-layout"] a {
+  color: white !important;
+}
+
+[data-testid="auth-layout"] h1 {
+
+  font-size: 35px !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: -1.5px;
+
+  margin-bottom: 8px !important;
+}
+
+[data-testid="auth-layout"] p {
+  color:
+    rgba(255,255,255,0.65) !important;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+[data-testid="auth-layout"] input {
+
+  height: 56px !important;
+
+  background:
+    rgba(255,255,255,0.03) !important;
+
+  border:
+    1px solid rgba(255,255,255,0.08) !important;
+
+  border-radius: 16px !important;
+
+  color: white !important;
+
+  transition: all 0.3s ease;
+}
+
+[data-testid="auth-layout"] input::placeholder {
+
+  color:
+    rgba(255,255,255,0.35) !important;
+}
+
+[data-testid="auth-layout"] input:focus {
+
+  border-color:
+    rgba(59,130,246,0.8) !important;
+
+  box-shadow:
+    0 0 0 4px rgba(59,130,246,0.12) !important;
+
+  transform:
+    translateY(-1px);
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+[data-testid="auth-layout"] button[type="submit"] {
+
+  height: 56px !important;
+
+  border-radius: 16px !important;
+
+  border: none !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    ) !important;
+
+  font-size: 15px !important;
+
+  font-weight: 700 !important;
+
+  transition: all 0.3s ease;
+}
+
+[data-testid="auth-layout"] button[type="submit"]:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(59,130,246,0.25),
+    0 0 30px rgba(168,85,247,0.18);
+}
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+[data-testid="auth-layout"] input[type="checkbox"] {
+  accent-color: #7c3aed;
+}
+
+/* =========================================================
+   LINK
+========================================================= */
+
+[data-testid="auth-layout"] a {
+
+  transition: all 0.3s ease;
+
+  color:
+    rgba(255,255,255,0.75) !important;
+}
+
+[data-testid="auth-layout"] a:hover {
+  color: #60a5fa !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  [data-testid="auth-layout"] > div {
+
+    width: auto !important;
+
+    margin: 20px;
+
+    border-radius: 24px !important;
+  }
+
+  [data-testid="auth-layout"] h1 {
+    font-size: 34px !important;
+  }
+}
