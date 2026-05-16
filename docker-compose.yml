@@ -1,0 +1,51 @@
+services:
+
+  strapi:
+    image: node:20
+
+    container_name: strapi
+
+    working_dir: /srv/app
+
+    command: sh -c "npm install && npm run develop"
+
+    ports:
+      - "1337:1337"
+
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi123
+
+      NODE_ENV: development
+
+      APP_KEYS: "appKey1,appKey2,appKey3,appKey4"
+      API_TOKEN_SALT: "randomApiSalt"
+      ADMIN_JWT_SECRET: "randomAdminSecret"
+      TRANSFER_TOKEN_SALT: "randomTransferSalt"
+      JWT_SECRET: "randomJwtSecret"
+
+    volumes:
+      - ./app:/srv/app
+
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+
+    container_name: strapi-postgres
+
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi123
+
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+    ports:
+      - "5432:5432"
