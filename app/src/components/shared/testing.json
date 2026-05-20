@@ -6,14 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "status_events": {
-      "type": "enumeration",
-      "enum": [
-        "Open",
-        "Closed",
-        "Coming Soon"
-      ]
-    },
     "room": {
       "type": "string"
     },
@@ -47,29 +39,8 @@
     "description": {
       "type": "blocks"
     },
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "instructor": {
       "type": "string"
-    },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "Semester 1",
-        "Semester 2",
-        "Semester 3",
-        "Semester 4",
-        "Semester 5",
-        "Semester 6"
-      ]
     }
   },
   "config": {}
