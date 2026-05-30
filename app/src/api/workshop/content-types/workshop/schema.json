@@ -11,13 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
     "ws_category": {
       "type": "enumeration",
       "enum": [
@@ -28,11 +21,6 @@
         "Semester 5",
         "Semester 6"
       ]
-    },
-    "workshop": {
-      "type": "component",
-      "component": "shared.testing",
-      "repeatable": false
     },
     "thumbnail": {
       "type": "media",
@@ -53,41 +41,28 @@
         "Advance"
       ]
     },
-    "modul_drone": {
-      "type": "string"
+    "workshop": {
+      "type": "component",
+      "component": "shared.testing",
+      "repeatable": false
     },
-    "modul_mikonAgro": {
-      "type": "string"
+    "ws_name": {
+      "type": "enumeration",
+      "enum": [
+        "Drone",
+        "Mikrokontroler Agroteknologi",
+        "Mikrokontroler Kesehatan",
+        "Raspberry Pi - Dasar",
+        "Raspberry Pi - Robot",
+        "Raspberry Pi - Face Recognition"
+      ]
     },
-    "modul_mikonKes": {
-      "type": "string"
+    "description": {
+      "type": "text"
     },
-    "modul_raspiDasar": {
-      "type": "string"
-    },
-    "modul_raspiRobot": {
-      "type": "string"
-    },
-    "modul_faceReg": {
-      "type": "string"
-    },
-    "payment_drone": {
-      "type": "string"
-    },
-    "payment_mikonAgro": {
-      "type": "string"
-    },
-    "payment_mikonKes": {
-      "type": "string"
-    },
-    "payment_raspiDasar": {
-      "type": "string"
-    },
-    "payment_raspiRobot": {
-      "type": "string"
-    },
-    "payment_faceReg": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "default": "Workshop"
     }
   }
 }

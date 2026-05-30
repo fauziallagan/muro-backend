@@ -604,7 +604,30 @@ export interface ApiPraktkumPraktkum extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    kelas: Schema.Attribute.Enumeration<
+      [
+        'RBT01 | 4KB01',
+        'RBT02 | 4KB01',
+        'RBT03 | 4KB01',
+        'RBT04 | 4KB02',
+        'RBT05 | 4KB02',
+        'RBT06 | 4KB02',
+        'RBT07 | 4KB03',
+        'RBT08 | 4KB03',
+        'RBT09 | 4KB03',
+        'RBT10 | 4KB04',
+        'RBT11 | 4KB04',
+        'RBT12 | 4KB05',
+        'RBT13 | 4KB05',
+        'RBT14 | 3DC01',
+        'RBT15 | 3DC02(Bea)',
+        'RBT16 | 3DC02(Bea)',
+        'RBTPD | -',
+      ]
+    >;
     level: Schema.Attribute.Enumeration<['S1', 'D3']>;
+    Link_daftarPraktikum: Schema.Attribute.String;
+    link_PraktikumUlang: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -612,11 +635,14 @@ export interface ApiPraktkumPraktkum extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     peserta: Schema.Attribute.RichText;
+    pj_meja: Schema.Attribute.String;
+    pj_shift: Schema.Attribute.String;
     praktikum: Schema.Attribute.Component<'shared.testing', false>;
     publishedAt: Schema.Attribute.DateTime;
-    shift: Schema.Attribute.Enumeration<['Pagi', 'Sore']>;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
+    shift: Schema.Attribute.Enumeration<
+      ['Shift 1', 'Shift 2', 'Shift 3', 'Shift 4', 'Shift 5']
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Praktikum'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -637,6 +663,7 @@ export interface ApiWorkshopWorkshop extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     level: Schema.Attribute.Enumeration<
       ['Beginner', 'Intermediate', 'Advance']
     > &
@@ -647,22 +674,9 @@ export interface ApiWorkshopWorkshop extends Struct.CollectionTypeSchema {
       'api::workshop.workshop'
     > &
       Schema.Attribute.Private;
-    modul_drone: Schema.Attribute.String;
-    modul_faceReg: Schema.Attribute.String;
-    modul_mikonAgro: Schema.Attribute.String;
-    modul_mikonKes: Schema.Attribute.String;
-    modul_raspiDasar: Schema.Attribute.String;
-    modul_raspiRobot: Schema.Attribute.String;
-    payment_drone: Schema.Attribute.String;
-    payment_faceReg: Schema.Attribute.String;
-    payment_mikonAgro: Schema.Attribute.String;
-    payment_mikonKes: Schema.Attribute.String;
-    payment_raspiDasar: Schema.Attribute.String;
-    payment_raspiRobot: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
     thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Workshop'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -675,6 +689,16 @@ export interface ApiWorkshopWorkshop extends Struct.CollectionTypeSchema {
         'Semester 4',
         'Semester 5',
         'Semester 6',
+      ]
+    >;
+    ws_name: Schema.Attribute.Enumeration<
+      [
+        'Drone',
+        'Mikrokontroler Agroteknologi',
+        'Mikrokontroler Kesehatan',
+        'Raspberry Pi - Dasar',
+        'Raspberry Pi - Robot',
+        'Raspberry Pi - Face Recognition',
       ]
     >;
   };

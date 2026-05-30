@@ -12,16 +12,17 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
+      "type": "string",
+      "default": "Praktikum"
+    },
+    "link_PraktikumUlang": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
+    "Link_daftarPraktikum": {
+      "type": "string"
     },
-    "praktikum": {
-      "type": "component",
-      "component": "shared.testing",
-      "repeatable": false
+    "pj_meja": {
+      "type": "string"
     },
     "level": {
       "type": "enumeration",
@@ -33,12 +34,45 @@
     "shift": {
       "type": "enumeration",
       "enum": [
-        "Pagi",
-        "Sore"
+        "Shift 1",
+        "Shift 2",
+        "Shift 3",
+        "Shift 4",
+        "Shift 5"
+      ]
+    },
+    "kelas": {
+      "type": "enumeration",
+      "enum": [
+        "RBT01 | 4KB01",
+        "RBT02 | 4KB01",
+        "RBT03 | 4KB01",
+        "RBT04 | 4KB02",
+        "RBT05 | 4KB02",
+        "RBT06 | 4KB02",
+        "RBT07 | 4KB03",
+        "RBT08 | 4KB03",
+        "RBT09 | 4KB03",
+        "RBT10 | 4KB04",
+        "RBT11 | 4KB04",
+        "RBT12 | 4KB05",
+        "RBT13 | 4KB05",
+        "RBT14 | 3DC01",
+        "RBT15 | 3DC02(Bea)",
+        "RBT16 | 3DC02(Bea)",
+        "RBTPD | -"
       ]
     },
     "peserta": {
       "type": "richtext"
+    },
+    "pj_shift": {
+      "type": "string"
+    },
+    "praktikum": {
+      "type": "component",
+      "component": "shared.testing",
+      "repeatable": false
     }
   }
 }

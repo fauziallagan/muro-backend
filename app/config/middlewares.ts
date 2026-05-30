@@ -1,25 +1,69 @@
-import type { Core } from "@strapi/strapi";
+module.exports = [
 
-const config: Core.Config.Middlewares = [
-  "strapi::logger",
-  "strapi::errors",
+  'strapi::logger',
+
+  'strapi::errors',
 
   {
-    name: "strapi::cors",
+    name: 'strapi::security',
     config: {
-      origin: ["http://localhost:3000", "http://localhost:5173"],
-      headers: "*",
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': [
+            "'self'",
+            'https:',
+            'http:',
+          ],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'https:',
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'https:',
+          ],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
+
+  {
+    name: 'strapi::cors',
+    config: {
+
+      origin: [
+
+        'https://muro-fe.vercel.app',
+	'http://localhost:3000',
+        'https://streets-consolidation-daughters-relief.trycloudflare.com',
+
+      ],
+
+      methods: [
+        'GET',
+        'POST',
+        'PUT',
+        'PATCH',
+        'DELETE',
+        'OPTIONS',
+      ],
+
+      headers: '*',
+
       credentials: true,
     },
   },
 
-  "strapi::security",
-  "strapi::poweredBy",
-  "strapi::query",
-  "strapi::body",
-  "strapi::session",
-  "strapi::favicon",
-  "strapi::public",
+  'strapi::poweredBy',
+  'strapi::query',
+  'strapi::body',
+  'strapi::session',
+  'strapi::favicon',
+  'strapi::public',
 ];
-
-export default config;
